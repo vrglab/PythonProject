@@ -10,6 +10,7 @@ def readTempSensor():
     f.close()
     temp_data = lines.split('t=')
     temperature = int(temp_data[1]) / 1000.0
-    return temperature
+    temperatureS = "%.1f" % temperature
+    return temperatureS
 
 readTempSensor()

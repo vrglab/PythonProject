@@ -13,7 +13,7 @@ def readTempSensor():
     f.close()
     temp_data = lines.split('t=')
     temperature = int(temp_data[1]) / 1000.0
-    print(f"Die Temperatur im Serverraum beträgt um {time.strftime('%H:%M:%S')} Uhr laut Sensor: {temperature} °C")
+    print(f"Die Temperatur im Serverraum beträgt um {time.strftime('%H:%M:%S')} Uhr laut Sensor: {'%.1f' % temperature} °C \n")
 
 def runEvery10Seconds():
     while True:
@@ -23,7 +23,5 @@ def runEvery10Seconds():
         except KeyboardInterrupt:
             print("\n Temperature messen beendet")
             sys.exit(0)
-
-
 
 runEvery10Seconds()
